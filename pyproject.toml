@@ -1,0 +1,28 @@
+[project]
+name = "adversarial-ai-evals"
+version = "0.1.0"
+description = "Evals for indirect prompt injection through tool responses"
+readme = "README.md"
+authors = [
+    { name = "omuili", email = "olanrewaju.muili@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "anthropic>=2.3.0",
+    "openai>=3.41.0",
+    "pydantic>=2.14.1",
+]
+
+[project.scripts]
+adversarial-ai-evals = "adversarial_ai_evals:main"
+adversarial-ai-evals-report = "adversarial_ai_evals.report:main"
+adversarial-ai-evals-rejudge = "adversarial_ai_evals.report:rejudge_main"
+
+[build-system]
+requires = ["uv_build>=0.12.12,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+]
